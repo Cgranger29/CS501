@@ -1,27 +1,25 @@
+import java.math.BigInteger;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 class ProgrammingAssignment1 {
   public static void main(String[] args) {
-    Scanner scnr = new Scanner(System.in);  // Create a Scanner object
-    double num1;
-    double num2;
-    double num3;
-    double num4;
+    Scanner scnr = new Scanner(System.in);
+  
+    int num1 = scnr.nextInt();
+    int num2 = scnr.nextInt();
+    int num3 = scnr.nextInt();
+    int num4 = scnr.nextInt();
 
-    num1 = scnr.nextInt();
-    num2 = scnr.nextInt();
-    num3 = scnr.nextInt();
-    num4 = scnr.nextInt();
+    int numProduct = num1*num2*num3*num4;
+    int numAverage = (num1 + num2 + num3 + num4) / 4;
 
-    double numProduct = num1*num2*num3*num4;
-    double numAverage = (num1 + num2 + num3 + num4) / 4;
+    System.out.println(numProduct + " " + numAverage);
 
-    int numProduct_round = (int)numProduct;
-    int numAverage_round = (int)numAverage;
-    System.out.print(numProduct_round);
-    System.out.println(" " + numAverage_round);
+    double float_numProduct = (double)num1 * (double)num2 *(double)num3 * (double)num4;
+    double float_numAverage = ((float)num1 + (float)num2 +(float)num3 +(float)num4)/4;
 
-    System.out.printf("%.3f " , numProduct);
-    System.out.printf("%.3f", numAverage);
-  }
+    System.out.printf("%.3f ", float_numProduct);
+    System.out.printf("%.3f\n", float_numAverage);
+}
 }
