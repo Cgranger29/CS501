@@ -1,2 +1,2 @@
 # CS501
-repo for CS501- Into to Java Class
+repo for CS501- Intro to Java Class
