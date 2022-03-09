@@ -16,8 +16,24 @@ class ItemToPurchase{
 
     }
 
-    public String getItemName(){
+    public String getName(){
         return this.itemName;
+    }
+
+    public int getPrice(){
+        return this.price;
+    }
+
+    public int getQuantity(){
+        return this.quantity;
+    }
+
+    public void setQuantity(int quantity){
+        this.quantity = quantity;
+    }
+
+    public void setPrice(int price){
+        this.price = price;
     }
 
     public void setDescription(String description){

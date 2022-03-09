@@ -59,7 +59,7 @@ class ShoppingCart{
     public ItemToPurchase getItem(String itemName){
         ItemToPurchase itemToReturn = new ItemToPurchase();
         for(int i = 0; i < this.cartItems.size(); i++){
-            if(this.cartItems.get(i).getItemName().equals(itemName)){
+            if(this.cartItems.get(i).getName().equals(itemName)){
                 itemToReturn = this.cartItems.get(i);
                 return itemToReturn;
             }
@@ -78,7 +78,7 @@ class ShoppingCart{
         if(checkForItem(item)){
             item.quantity = quantity;
         } else{
-            System.out.println("Item not found in cart. Nothing removed.");
+            System.out.println("Item not found in cart. Nothing modified.");
         }
     }
 
@@ -92,10 +92,10 @@ class ShoppingCart{
         return itemTotal;
     }
 
-    public double getCostOfCart(){
-        double totalCost = 0.0;
+    public int getCostOfCart(){
+        int totalCost = 0;
         for (int i = 0; i < this.cartItems.size(); i++){
-            double costOfItem = (this.cartItems.get(i).quantity * this.cartItems.get(i).price);
+            int costOfItem = (this.cartItems.get(i).quantity * this.cartItems.get(i).price);
             totalCost += costOfItem;
         }
 
@@ -106,15 +106,19 @@ class ShoppingCart{
 
         System.out.println(this.customerName + "'s Shopping Cart - " + this.currentDate);
         if(this.cartItems.size() <= 0){
+            System.out.println("Number of Items: 0");
+            System.out.println("");
             System.out.println("SHOPPING CART IS EMPTY");
+            System.out.println("");
+            System.out.println("Total: $0");
         } else {
-            System.out.println("Number of items: " + this.getNumItemsInCart());
+            System.out.println("Number of Items: " + this.getNumItemsInCart());
             System.out.println("");
             for (int i = 0; i < this.cartItems.size(); i++){
                 this.cartItems.get(i).printItemCost();
             }
-            System.out.println("\n");
-            System.out.println("Total: " + this.getCostOfCart());
+            System.out.println("");
+            System.out.println("Total: $" + this.getCostOfCart());
 
         }  
         
