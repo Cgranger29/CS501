@@ -17,4 +17,11 @@ public class Pet {
     public int getAge(){
         return age;
     }
+
+    public void printInfo(){
+        System.out.println("Pet Information");
+        System.out.println("   Name: " + name);
+        System.out.println("   Age: " + age);
+        
+    }
 }
